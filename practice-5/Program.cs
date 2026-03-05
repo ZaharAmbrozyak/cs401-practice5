@@ -20,6 +20,7 @@ internal static class Program
         registry.ExecuteAllDuties();
         
         undergradStudent1.PerformDuties();
+        professor1.ConductResearch("Smart math topic");
         
         registry.GetMemberStatistics();
     }
