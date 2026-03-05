@@ -12,4 +12,14 @@ public class Professor(string name, string memberId): UniversityMember(name, mem
     {
         Console.WriteLine($"Conducted research about {topic}!");
     }
+
+    public override void ShowStatistics()
+    {
+        Console.WriteLine($"Total count of topics of professor {name} = {actionLog.Count}");
+    }
+
+    public override void ModifyStatistics(UniversityStatistics statistics)
+    {
+        statistics.professorsActionsCount += actionLog.Count;
+    }
 }

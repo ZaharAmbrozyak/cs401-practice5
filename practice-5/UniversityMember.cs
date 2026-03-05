@@ -1,24 +1,44 @@
 namespace practice_5;
 
-public class UniversityMember
+public abstract class UniversityMember
 {
-    public string Name { get; }
-    public string MemberId { get; }
+    private string name;
 
-    protected List<string> actionLog = new List<string>();
+    public string Name
+    {
+        get => name;
+        set
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                throw new ArgumentException("Name cannot be empty!");
+            }
+
+            name = value;
+        }
+    }
+
+    private string memberId;
+
+    public string MemberId
+    {
+        get => memberId;
+        set
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                throw new ArgumentException("MemberId cannot be empty!");
+            }
+
+            memberId = value;
+        }
+
+    }
+
+    protected List<string> actionLog = [];
 
     protected UniversityMember(string name, string memberId)
     {
-        if (string.IsNullOrEmpty(name))
-        {
-            throw new ArgumentException("Name cannot be empty!");
-        }
-
-        if (string.IsNullOrEmpty(memberId))
-        {
-            throw new ArgumentException("MemberId cannot be empty!");
-        }
-
         Name = name;
         MemberId = memberId;
     }
@@ -30,6 +50,8 @@ public class UniversityMember
             throw new Exception("Member has reached a daily limit of 5 actions!");
         }
     }
-    
-    
+
+    public abstract void ShowStatistics();
+
+    public abstract void ModifyStatistics(UniversityStatistics statistics);
 }

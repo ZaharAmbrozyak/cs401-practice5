@@ -7,4 +7,14 @@ public class GraduateStudent(string name, string memberId) : UniversityMember(na
         base.PerformDuties();
         actionLog.Add($"Graduate student {name}: Thesis research update");
     }
+
+    public override void ShowStatistics()
+    {
+        Console.WriteLine($"Total count of research updates of graduate student {name} = {actionLog.Count}");
+    }
+
+    public override void ModifyStatistics(UniversityStatistics statistics)
+    {
+        statistics.graduateActionsCount += actionLog.Count;
+    }
 }
