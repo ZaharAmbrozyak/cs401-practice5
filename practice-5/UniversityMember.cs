@@ -2,11 +2,11 @@ namespace practice_5;
 
 public abstract class UniversityMember
 {
-    private string name;
+    private string _name;
 
     public string Name
     {
-        get => name;
+        get => _name;
         set
         {
             if (string.IsNullOrEmpty(value))
@@ -14,15 +14,15 @@ public abstract class UniversityMember
                 throw new ArgumentException("Name cannot be empty!");
             }
 
-            name = value;
+            _name = value;
         }
     }
 
-    private string memberId;
+    private string _memberId;
 
     public string MemberId
     {
-        get => memberId;
+        get => _memberId;
         set
         {
             if (string.IsNullOrEmpty(value))
@@ -30,12 +30,12 @@ public abstract class UniversityMember
                 throw new ArgumentException("MemberId cannot be empty!");
             }
 
-            memberId = value;
+            _memberId = value;
         }
 
     }
 
-    protected List<string> actionLog = [];
+    protected List<string> ActionLog = [];
 
     protected UniversityMember(string name, string memberId)
     {
@@ -45,9 +45,9 @@ public abstract class UniversityMember
 
     public virtual void PerformDuties()
     {
-        if (actionLog.Count > 5)
+        if (ActionLog.Count > 5)
         {
-            throw new Exception("Member has reached a daily limit of 5 actions!");
+            throw new InvalidOperationException("Member has reached a daily limit of 5 actions!");
         }
     }
 

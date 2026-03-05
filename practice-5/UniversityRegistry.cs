@@ -2,16 +2,16 @@ namespace practice_5;
 
 public class UniversityRegistry
 {
-    private List<UniversityMember> members = [];
+    private List<UniversityMember> _members = [];
 
     public void AddMember(UniversityMember member)
     {
-        members.Add(member);
+        _members.Add(member);
     }
 
     public void ExecuteAllDuties()
     {
-        foreach (var member in members)
+        foreach (var member in _members)
         {
             member.PerformDuties();
         }
@@ -21,7 +21,7 @@ public class UniversityRegistry
     {
         var universityStatistics = new UniversityStatistics();
         
-        foreach (var member in members)
+        foreach (var member in _members)
         {
             Console.WriteLine(member.ShowStatistics());
             member.ModifyStatistics(universityStatistics);

@@ -5,21 +5,21 @@ public class Professor(string name, string memberId): UniversityMember(name, mem
     public override void PerformDuties()
     {
         base.PerformDuties();
-        actionLog.Add($"Professor {name}: Lecture delivered");
+        ActionLog.Add($"Professor {name}: Lecture delivered");
     }
 
     public void ConductResearch(string topic)
     {
-        actionLog.Add($"Conducted research about {topic}");
+        ActionLog.Add($"Conducted research about {topic}");
     }
 
     public override string ShowStatistics()
     {
-        return $"Total count of actions of professor {name} = {actionLog.Count}";
+        return $"Total count of actions of professor {name} = {ActionLog.Count}";
     }
 
     public override void ModifyStatistics(UniversityStatistics statistics)
     {
-        statistics.ProfessorsActionsCount += actionLog.Count;
+        statistics.ProfessorsActionsCount += ActionLog.Count;
     }
 }
