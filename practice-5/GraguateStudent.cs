@@ -8,13 +8,13 @@ public class GraduateStudent(string name, string memberId) : UniversityMember(na
         actionLog.Add($"Graduate student {name}: Thesis research update");
     }
 
-    public override void ShowStatistics()
+    public override string ShowStatistics()
     {
-        Console.WriteLine($"Total count of research updates of graduate student {name} = {actionLog.Count}");
+        return $"Total count of research updates of graduate student {name} = {actionLog.Count}";
     }
 
     public override void ModifyStatistics(UniversityStatistics statistics)
     {
-        statistics.graduateActionsCount += actionLog.Count;
+        statistics.GraduateActionsCount += actionLog.Count;
     }
 }

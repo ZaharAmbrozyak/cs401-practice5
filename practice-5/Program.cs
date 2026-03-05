@@ -1,6 +1,6 @@
 ﻿namespace practice_5;
 
-static class Program
+internal static class Program
 {
     private static void Main()
     {

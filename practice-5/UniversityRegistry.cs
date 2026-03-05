@@ -18,11 +18,16 @@ public class UniversityRegistry
     }
 
     public void GetMemberStatistics()
-    { 
-
+    {
+        var universityStatistics = new UniversityStatistics();
+        
         foreach (var member in members)
         {
-            member.ShowStatistics();
+            Console.WriteLine(member.ShowStatistics());
+            member.ModifyStatistics(universityStatistics);
         }
+        
+        Console.WriteLine(universityStatistics.GetSummary());
+        
     }
 }

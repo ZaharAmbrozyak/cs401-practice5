@@ -51,7 +51,7 @@ public abstract class UniversityMember
         }
     }
 
-    public abstract void ShowStatistics();
+    public abstract string ShowStatistics();
 
     public abstract void ModifyStatistics(UniversityStatistics statistics);
 }
