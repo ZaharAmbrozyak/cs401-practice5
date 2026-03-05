@@ -5,12 +5,12 @@ public class GraduateStudent(string name, string memberId) : UniversityMember(na
     public override void PerformDuties()
     {
         base.PerformDuties();
-        ActionLog.Add($"Graduate student {name}: Thesis research update");
+        ActionLog.Add($"Graduate student {Name}: Thesis research update");
     }
 
     public override string ShowStatistics()
     {
-        return $"Total count of research updates of graduate student {name} = {ActionLog.Count}";
+        return $"Total count of research updates of graduate student {Name} = {ActionLog.Count}";
     }
 
     public override void ModifyStatistics(UniversityStatistics statistics)

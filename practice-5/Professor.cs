@@ -5,7 +5,7 @@ public class Professor(string name, string memberId): UniversityMember(name, mem
     public override void PerformDuties()
     {
         base.PerformDuties();
-        ActionLog.Add($"Professor {name}: Lecture delivered");
+        ActionLog.Add($"Professor {Name}: Lecture delivered");
     }
 
     public void ConductResearch(string topic)
@@ -15,7 +15,7 @@ public class Professor(string name, string memberId): UniversityMember(name, mem
 
     public override string ShowStatistics()
     {
-        return $"Total count of actions of professor {name} = {ActionLog.Count}";
+        return $"Total count of actions of professor {Name} = {ActionLog.Count}";
     }
 
     public override void ModifyStatistics(UniversityStatistics statistics)

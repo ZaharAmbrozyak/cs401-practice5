@@ -2,7 +2,7 @@ namespace practice_5;
 
 public class UniversityRegistry
 {
-    private List<UniversityMember> _members = [];
+    private readonly List<UniversityMember> _members = [];
 
     public void AddMember(UniversityMember member)
     {
